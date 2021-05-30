@@ -39,30 +39,168 @@ The course bascially includes following 3 Major Parts <br />
     Lab Part-2  Synth-Sim Mismatch for Blocking Statement<br />
 
 
-## Day 3 - Combinational and sequential optimizations
-### Introduction to optimizations<br />
+## Day 3 - Combinational and Sequential Optimizations
+### Introduction to Optimizations<br />
 
 Digital Circuits consist of two types of circuts combination & sequential circuits.
 Optimization can be done in both type of circuts which can results in reduction in power & area 
 If any module in a design is required not to optimized then it can be under don't touch category ,
 where tool doesnt not optimize that particular logic
 
-### Combinational logic optimizations<br /> 
+### Combinational Logic Optimizations<br /> 
 1) Sequeezing the logic to get the most optimised design - area & power saving 
 2) Constant Propogation 
 3) Boolean Logic Optimization 
 
-### Sequential logic optimizations<br />
+### Sequential Logic Optimizations<br />
 1) Constant Propogation 
 2) State Optimization 
 3) Retiming 
 4) Sequential Logic Optimization 
 
+### Sequential Optimzations for Unused Outputs<br />
+1) Like counter, use is just for increment 
 
-### Sequential optimzations for unused outputs<br />
+### LABS
 
+#### Aim : Taking example of combination circuits , sequential circuits & sequential unused output circuits to perfore optimization
 
+Commands to perform optimation : 
+```
+yosys
+read_liberty –lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check.v
+synth –top opt_check
+opt _clean_purge                                      // constant propogation optimization 
+abc –liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
 
+#### Lab Part-1 : Combinational Logic Optimizations
+
+<img src="Images/L3_1_1_Verilog_Module.PNG">
+
+#### Figure 3.1.1 Verilog Model<br /> 
+
+As per the above verilog model expected output is y=ab & one of the input is constant
+
+<img src="Images/L3_1_2_Syn_step_1.PNG">
+
+#### Figure 3.1.2 Synthesis<br /> 
+
+<img src="Images/L3_1_3_Syn_step_2.PNG">
+
+#### Figure 3.1.3 Synthesis<br /> 
+
+<img src="Images/L3_1_4_Syn_step_3.PNG">
+
+#### Figure 3.1.4 Synthesis<br /> 
+
+<img src="Images/L3_1_5_Syn_step_4.PNG">
+
+#### Figure 3.1.5 Synthesis<br /> 
+
+Due to the constant input of the MUX the logic is optimized 
+
+<img src="Images/L3_2_1_Verilog_Module.PNG">
+
+#### Figure 3.1.6 Verilog Model<br /> 
+
+As per the above verilog model expected output is y=a+b & one of the input is constant
+
+<img src="Images/L3_2_2_Syn_Step.PNG">
+
+#### Figure 3.1.7 Synthesis<br /> 
+
+Due to the constant input of the MUX the logic is optimized 
+
+<img src="Images/L3_3_1_Verilog_Module.PNG">
+
+#### Figure 3.1.8 Verilog Model<br /> 
+
+As per the above verilog model expected output is y=abc due to presence of constant input 
+
+<img src="Images/L3_3_2_Syn_Step.PNG">
+
+#### Figure 3.1.9 Synthesis<br /> 
+
+Due to the constant input , logic is optimized to y=abc
+
+<img src="Images/L3_4_1_Verilog_model.PNG">
+
+#### Figure 3.1.10 Verilog Model<br /> 
+
+In above model , the boolean optimization will happend & logic will get optimized as Y= ac + bar(a)bar(c) = a XNOR c is expected 
+
+<img src="Images/L3_4_2_Syn_step.PNG">
+
+#### Figure 3.1.11 Synthesis<br /> 
+
+The above logic will be give the equation of Y= ac + bar(a)bar(c)
+
+#### Lab Part-2 : Sequential Logic Optimizations
+
+<img src="Images/L3_5_1_Verilog_Model_dff.PNG">
+
+#### Figure 3.2.1 Verilog Model<br /> 
+
+<img src="Images/L3_5_2_rtl_sim_dff.PNG">
+
+#### Figure 3.2.2 Verilog Model<br /> 
+
+<img src="Images/L3_5_3_Syn_model.PNG">
+
+#### Figure 3.2.3 Verilog Model<br /> 
+
+<img src="Images/L3_6_1_verilog_model_dff.PNG">
+
+#### Figure 3.2.4 Verilog Model<br /> 
+
+<img src="Images/L3_6_2_rtl_sim.PNG">
+
+#### Figure 3.2.5 Verilog Model<br /> 
+
+<img src="Images/L3_6_3_syn_model.PNG">
+
+#### Figure 3.2.6 Verilog Model<br /> 
+
+<img src="Images/L3_7_1_verilog_model_dff.PNG">
+
+#### Figure 3.2.7 Verilog Model<br /> 
+
+<img src="Images/L3_7_2_rtl_sim.PNG">
+
+#### Figure 3.2.8 Verilog Model<br /> 
+
+<img src="Images/L3_7_3_syn_model.PNG">
+
+#### Figure 3.2.9 Verilog Model<br /> 
+
+#### Lab Part-3 : Sequential Optimzations for Unused Outputs
+
+<img src="Images/L3_8_1_counter_vm.PNG">
+
+#### Figure 3.3.1 Verilog Model<br /> 
+
+<img src="Images/L3_8_2_syn.PNG">
+
+#### Figure 3.3.2 Verilog Model<br /> 
+
+<img src="Images/L3_8_3_model.PNG">
+
+#### Figure 3.3.3 Verilog Model<br /> 
+
+<img src="Images/L3_9_1_vm_counter.PNG">
+
+#### Figure 3.3.4 Verilog Model<br /> 
+
+<img src="Images/L3_9_2_syn.PNG">
+
+#### Figure 3.3.5 Verilog Model<br /> 
+
+<img src="Images/L3_9_3_model.PNG">
+
+#### Figure 3.3.6 Verilog Model<br /> 
 
 
 
