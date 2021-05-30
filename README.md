@@ -10,6 +10,8 @@ The course bascially includes following 3 Major Parts <br />
 * Converting Logic in Synthesizable Design & Optimization <br />
 * Validating the Synthesized Design to Match as per Specification <br />
 
+
+
 # Table of Contents
 
 ## Day 1 - Introduction to Verilog RTL design and Synthesis
@@ -38,7 +40,9 @@ The course bascially includes following 3 Major Parts <br />
     Lab Part-1  GLS and Synthesis-Simulation Mismatch<br />
     Lab Part-2  Synth-Sim Mismatch for Blocking Statement<br />
     
-## Day 5 - If else , for loop , case generate
+## Day 5 - If else , for loop , case Generate
+
+
 
 ## Day 1 - Introduction to Verilog RTL design and Synthesis
 
