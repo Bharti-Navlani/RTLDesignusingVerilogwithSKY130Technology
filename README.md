@@ -703,7 +703,13 @@ Performing GLS using primitives & verilog models for standard cell using the net
 <br />
 <br /> 
 
+# References
+  - VLSI System Design: https://www.vlsisystemdesign.com/
 
+# Acknowledgement
+  - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
+  - [Shon Taware]
+  
 
 
 
