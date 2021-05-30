@@ -39,6 +39,56 @@ The course bascially includes following 3 Major Parts <br />
     Lab Part-2  Synth-Sim Mismatch for Blocking Statement<br />
 
 
+
+
+<img src="Images/L2_1_1.PNG">
+
+<img src="Images/L2_2_2.PNG">
+
+<img src="Images/L2_2_3.PNG">
+
+<img src="Images/L2_2_4.PNG">
+
+<img src="Images/L2_2_5.PNG">
+
+<img src="Images/L2_2_6.PNG">
+
+<img src="Images/L2_2_7.PNG">
+
+<img src="Images/L2_3_1.PNG">
+
+<img src="Images/L2_3_10.PNG">
+
+<img src="Images/L2_3_11.PNG">
+
+<img src="Images/L2_3_12.png">
+
+<img src="Images/L2_3_13.png">
+
+<img src="Images/L2_3_14.png">
+
+<img src="Images/L2_3_15.png">
+
+<img src="Images/L2_3_16.png">
+
+<img src="Images/L2_3_17.png">
+
+<img src="Images/L2_3_2.PNG">
+
+<img src="Images/L2_3_3.PNG">
+
+<img src="Images/L2_3_4.PNG">
+
+<img src="Images/L2_3_6.PNG">
+
+<img src="Images/L2_3_7.PNG">
+
+
+
+
+
+
+
 ## Day 3 - Combinational and Sequential Optimizations
 ### Introduction to Optimizations<br />
 
