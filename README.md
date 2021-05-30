@@ -13,30 +13,59 @@ The course bascially includes following 3 Major Parts <br />
 # Table of Contents
 
 ## Day 1 - Introduction to Verilog RTL design and Synthesis
-Introduction to open-source simulator iverilog<br />
-Labs using iverilog and gtkwave<br />
-Introduction to Yosys and Logic synthesis<br />
-Labs using Yosys and Sky130 PDKs<br />
+  -Introduction to open-source simulator iverilog<br />
+  -Labs using iverilog and gtkwave<br />
+  -Introduction to Yosys and Logic synthesis<br />
+  -Labs using Yosys and Sky130 PDKs<br />
 
 ## Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
-Introduction to timing .libs<br />
-Hierarchical vs Flat Synthesis<br />
-Various Flop Coding Styles and optimization<br />
+  -Introduction to timing .libs<br />
+  -Hierarchical vs Flat Synthesis<br />
+  -Various Flop Coding Styles and optimization<br />
 
 ## Day 3 - Combinational and sequential optimizations
-Introduction to optimizations<br />
-Combinational logic optimizations<br />
-Sequential logic optimizations<br />
-Sequential optimzations for unused outputs<br />
+  -Introduction to optimizations<br />
+  -Combinational logic optimizations<br />
+  -Sequential logic optimizations<br />
+  -Sequential optimzations for unused outputs<br />
 
 ## Day 4 - GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch<br />
-### GLS,Sythesis-Simulation Mismatch and Blocking/Non-Blocking Statements<br />
-#### About GLS<br />
-#### Types of GLS<br />
-#### Synthesis Simulation Mismatch
-### LABS
-#### Lab Part-1  GLS and Synthesis-Simulation Mismatch<br />
-#### Lab Part-2  Synth-Sim Mismatch for Blocking Statement<br />
+  -GLS,Sythesis-Simulation Mismatch and Blocking/Non-Blocking Statements<br />
+    -About GLS<br />
+    -Types of GLS<br />
+  -Synthesis Simulation Mismatch
+  -LABS
+    Lab Part-1  GLS and Synthesis-Simulation Mismatch<br />
+    Lab Part-2  Synth-Sim Mismatch for Blocking Statement<br />
+
+
+## Day 3 - Combinational and sequential optimizations
+### Introduction to optimizations<br />
+
+Digital Circuits consist of two types of circuts combination & sequential circuits.
+Optimization can be done in both type of circuts which can results in reduction in power & area 
+If any module in a design is required not to optimized then it can be under don't touch category ,
+where tool doesnt not optimize that particular logic
+
+### Combinational logic optimizations<br /> 
+1) Sequeezing the logic to get the most optimised design - area & power saving 
+2) Constant Propogation 
+3) Boolean Logic Optimization 
+
+### Sequential logic optimizations<br />
+1) Constant Propogation 
+2) State Optimization 
+3) Retiming 
+4) Sequential Logic Optimization 
+
+
+### Sequential optimzations for unused outputs<br />
+
+
+
+
+
+
 
 
 ## Day 4 - GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch
