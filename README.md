@@ -155,15 +155,15 @@ Mobitity is  less  to improve, so u need to make wider transfer – hence it req
 
 <img src="Images/L2_3_14.png">
 
-#### Figure 3.0
+#### Figure 2.10
 
 <img src="Images/L2_3_15.png">
 
-#### Figure 3.1
+#### Figure 2.11
 
 <img src="Images/L2_3_16.png">
 
-#### Figure 3.2
+#### Figure 2.12
 
 
 ## Day 3 - Combinational and Sequential Optimizations
