@@ -37,6 +37,8 @@ The course bascially includes following 3 Major Parts <br />
   -LABS
     Lab Part-1  GLS and Synthesis-Simulation Mismatch<br />
     Lab Part-2  Synth-Sim Mismatch for Blocking Statement<br />
+    
+## Day 5 - If else , for loop , case generate
 
 ## Day 1 - Introduction to Verilog RTL design and Synthesis
 
@@ -704,11 +706,11 @@ Performing GLS using primitives & verilog models for standard cell using the net
 <br /> 
 
 # References
-  - VLSI System Design: https://www.vlsisystemdesign.com/
+ VLSI System Design: https://www.vlsisystemdesign.com/
 
 # Acknowledgement
   - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
-  - [Shon Taware]
+  - Shon Taware
   
 
 
