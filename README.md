@@ -63,7 +63,7 @@ where tool doesnt not optimize that particular logic
 
 ### LABS
 
-#### Aim : Taking example of combination circuits , sequential circuits & sequential unused output circuits to perfore optimization
+#### Aim : Taking example of combination circuits , sequential circuits & sequential unused output circuits to perform optimization
 
 Commands to perform optimation : 
 ```
@@ -83,6 +83,9 @@ show
 #### Figure 3.1.1 Verilog Model<br /> 
 
 As per the above verilog model expected output is y=ab & one of the input is constant
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_1_2_Syn_step_1.PNG">
 
@@ -101,42 +104,63 @@ As per the above verilog model expected output is y=ab & one of the input is con
 #### Figure 3.1.5 Synthesis<br /> 
 
 Due to the constant input of the MUX the logic is optimized 
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_2_1_Verilog_Module.PNG">
 
 #### Figure 3.1.6 Verilog Model<br /> 
 
 As per the above verilog model expected output is y=a+b & one of the input is constant
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_2_2_Syn_Step.PNG">
 
 #### Figure 3.1.7 Synthesis<br /> 
 
 Due to the constant input of the MUX the logic is optimized 
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_3_1_Verilog_Module.PNG">
 
 #### Figure 3.1.8 Verilog Model<br /> 
 
 As per the above verilog model expected output is y=abc due to presence of constant input 
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_3_2_Syn_Step.PNG">
 
 #### Figure 3.1.9 Synthesis<br /> 
 
 Due to the constant input , logic is optimized to y=abc
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_4_1_Verilog_model.PNG">
 
 #### Figure 3.1.10 Verilog Model<br /> 
 
 In above model , the boolean optimization will happend & logic will get optimized as Y= ac + bar(a)bar(c) = a XNOR c is expected 
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_4_2_Syn_step.PNG">
 
 #### Figure 3.1.11 Synthesis<br /> 
 
 The above logic will be give the equation of Y= ac + bar(a)bar(c)
+<br /> 
+<br /> 
+<br /> 
 
 #### Lab Part-2 : Sequential Logic Optimizations
 
@@ -144,13 +168,23 @@ The above logic will be give the equation of Y= ac + bar(a)bar(c)
 
 #### Figure 3.2.1 Verilog Model<br /> 
 
-<img src="Images/L3_5_2_rtl_sim_dff.PNG">
+<img src="Images/L3_5_2_rtl_sim_dff.PNG"> 
 
-#### Figure 3.2.2 Verilog Model<br /> 
+#### Figure 3.2.2 Simulation<br /> 
+
+Reset is high to q is zero but as soon as reset goes low , q will wait for next subsequent clock edge then goes high
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_5_3_Syn_model.PNG">
 
-#### Figure 3.2.3 Verilog Model<br /> 
+#### Figure 3.2.3 Synthesis<br /> 
+
+We have coded high code & lib as active low so inserted a invertor 
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_6_1_verilog_model_dff.PNG">
 
@@ -158,37 +192,71 @@ The above logic will be give the equation of Y= ac + bar(a)bar(c)
 
 <img src="Images/L3_6_2_rtl_sim.PNG">
 
-#### Figure 3.2.5 Verilog Model<br /> 
+#### Figure 3.2.5 Simulation<br /> 
+
+Q is always 1 , hence there will optimization 
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_6_3_syn_model.PNG">
 
-#### Figure 3.2.6 Verilog Model<br /> 
+#### Figure 3.2.6 Synthesis<br /> 
+
+Post synthesis we see that there is not MUX reported as the logic is optimized to constant
+<br /> 
+<br /> 
+<br /> 
 
 <img src="Images/L3_7_1_verilog_model_dff.PNG">
 
 #### Figure 3.2.7 Verilog Model<br /> 
 
+This model has both set & reset flops , this will TCQ delay 
+<br /> 
+<br /> 
+<br /> 
+
 <img src="Images/L3_7_2_rtl_sim.PNG">
 
-#### Figure 3.2.8 Verilog Model<br /> 
+#### Figure 3.2.8 Simulation<br /> 
 
 <img src="Images/L3_7_3_syn_model.PNG">
 
-#### Figure 3.2.9 Verilog Model<br /> 
-
+#### Figure 3.2.9 Synthesis<br /> 
+<br /> 
+<br /> 
+<br /> 
 #### Lab Part-3 : Sequential Optimzations for Unused Outputs
+
+Commands to perform optimation : 
+```
+yosys
+read_liberty –lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check.v
+synth –top opt_check
+difflibmap –liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
 
 <img src="Images/L3_8_1_counter_vm.PNG">
 
 #### Figure 3.3.1 Verilog Model<br /> 
 
+Upon clock & reset – if reset is high then it get initialized to zero else it get incremented 
+Final output is q which is count[0] & other two buts are unused of counter 
+<br /> 
+<br /> 
+<br /> 
+
 <img src="Images/L3_8_2_syn.PNG">
 
-#### Figure 3.3.2 Verilog Model<br /> 
+#### Figure 3.3.2 Synthesis<br /> 
 
 <img src="Images/L3_8_3_model.PNG">
 
-#### Figure 3.3.3 Verilog Model<br /> 
+#### Figure 3.3.3 Synthesis<br /> 
 
 <img src="Images/L3_9_1_vm_counter.PNG">
 
@@ -196,15 +264,19 @@ The above logic will be give the equation of Y= ac + bar(a)bar(c)
 
 <img src="Images/L3_9_2_syn.PNG">
 
-#### Figure 3.3.5 Verilog Model<br /> 
+#### Figure 3.3.5 Synthesis<br /> 
 
 <img src="Images/L3_9_3_model.PNG">
 
-#### Figure 3.3.6 Verilog Model<br /> 
+#### Figure 3.3.6 Synthesis<br /> 
 
-
-
-
+Q= c[2].bar(c[1]).bar(c[0]) 
+Rest of the logic is increment logic as counter is increment by 1 so adder is the other part of this design
+But in previous case we didn’t see that as output Q was not used hence logic got optimized
+In this case Q is 2 bit hence we have huge logic here 
+<br /> 
+<br /> 
+<br /> 
 
 ## Day 4 - GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch
 ### GLS,Sythesis-Simulation Mismatch and Blocking/Non-Blocking Statements<br />
