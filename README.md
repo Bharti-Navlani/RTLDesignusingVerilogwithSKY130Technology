@@ -38,55 +38,132 @@ The course bascially includes following 3 Major Parts <br />
     Lab Part-1  GLS and Synthesis-Simulation Mismatch<br />
     Lab Part-2  Synth-Sim Mismatch for Blocking Statement<br />
 
+## Day 1 - Introduction to Verilog RTL design and Synthesis
+
+Summary: 
+• Yosys tool is used to covert     RTL -> NL which takes input as RTL & .lib<br />
+• Iverilog is a tool which is use for simulation both at RTL & NL level<br />
+• Lib is collection of all the modules all sc – and 2 input , 3 input etc , slow version , fast version , medium version<br />
+• Fast cells are required so that we have less progation delay<br />
+• Slower cells are required to meet hold timing <br />
+• Wider cell -> Low Delay -> More area & power<br />
+• Narrow Transitor -> More Delay -> Less area & power<br />
+• During synthesis which cell to pick that guidance is given by sythesizer <br />
 
 
+## Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
+
+Various Flop Coding Styles and optimization<br />
+
+### Introduction to timing .libs<br />
+•	.lib consist standard cell both slow & fast<br />
+•	../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80<br />
+130 nm<br />
+025C ->temp<br />
+tt-> typical<br /> 
+1v8 -> voltage<br /> 
+fd -> Foundry , sc -> Standard Cell, hd -> High Density<br />
+•	PVT<br />
+pvt process ( variation due to fabrication ) - <br />
+voltage ( variation due to voltage)<br />
+temp ( variation due to temp) <br />
+whatever chip you fabricate , using some machine , that machine cannot fab exactly same chip there might be some variation – there where PVT comes into picture <br />
+PVT=> This tells how silicon is going to work <br />
+even if there is a variation  your silicon should work <br />
+Libraries will be characterized to model this variation<br /> 
+•	Other Information in lib file <br />
+Technology – cmos<br />
+Delay model – look up table<br />
+Unit of time – ns<br />
+Voltage is V<br />
+Power – nW<br />
+Current mA<br />
+R= Kohm<br />
+C= pF<br />
+Operation condition<br />
+Keyword – cell will tell you about cell type<br />
+Features – leakage power, Delay, power etc<br />
+Logical behavior can be seen Verilog model<br />
 
 <img src="Images/L2_1_1.PNG">
 
-<img src="Images/L2_2_2.PNG">
+#### Figure 2.1
 
-<img src="Images/L2_2_3.PNG">
+These 5 inputs can have 2^(5)=32 combination so for that 32 combinationn , library shows features like leakage power , delay ect 
+Also gives , area , power ports , transition 
+A1: Input capt , transition related to this pin etc
+Timing information – rise time & fall time 
+
+and_2_0    vs and_2_2
+area
+6.256           7.5072
+
+-> Means with more area indicates wider transition – faster – more power
+
+#### Hierarchical vs Flat Synthesis<br />
+
+````
+Syn –top ( check previous lecture)
+read_liberty –lib  ../my_lib/lib/sky_*.lib
+read_verilog multiple_module.v
+synth –top multiple_modules
+Linking design to the library 
+abc  -liberty ../my_lib/lib/sky*
+show multiple_modules
+write_verilog –noattr multiple_modules_hie.v
+Flatten //This will give flatten design
+````
 
 <img src="Images/L2_2_4.PNG">
 
+Stacked PMOS is bad – 
+Mobitity is  less  to improve, so u need to make wider transfer – hence it requires good logical effort
+
+
+
 <img src="Images/L2_2_5.PNG">
+
+#### Figure 2.2
 
 <img src="Images/L2_2_6.PNG">
 
+#### Figure 2.3
+
 <img src="Images/L2_2_7.PNG">
+
+#### Figure 2.4
 
 <img src="Images/L2_3_1.PNG">
 
+#### Figure 2.5
+
 <img src="Images/L2_3_10.PNG">
+
+#### Figure 2.6
 
 <img src="Images/L2_3_11.PNG">
 
+#### Figure 2.7
+
 <img src="Images/L2_3_12.png">
+
+#### Figure 2.8
 
 <img src="Images/L2_3_13.png">
 
+#### Figure 2.9
+
 <img src="Images/L2_3_14.png">
+
+#### Figure 3.0
 
 <img src="Images/L2_3_15.png">
 
+#### Figure 3.1
+
 <img src="Images/L2_3_16.png">
 
-<img src="Images/L2_3_17.png">
-
-<img src="Images/L2_3_2.PNG">
-
-<img src="Images/L2_3_3.PNG">
-
-<img src="Images/L2_3_4.PNG">
-
-<img src="Images/L2_3_6.PNG">
-
-<img src="Images/L2_3_7.PNG">
-
-
-
-
-
+#### Figure 3.2
 
 
 ## Day 3 - Combinational and Sequential Optimizations
